@@ -28,4 +28,9 @@ class CartProvider with ChangeNotifier {
   }
 
   List<Cart> get cartItems => _cartItems;
+
+  void emptyCart(){
+    _cartItems.clear();
+    notifyListeners();
+  }
 }
