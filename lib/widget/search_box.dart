@@ -3,8 +3,9 @@ import 'package:e_comm_app/utils/fontstyles.dart';
 import 'package:flutter/material.dart';
 
 class SearchBox extends StatelessWidget {
-  const SearchBox({super.key});
+  final ValueChanged<String> onChanged; 
 
+  const SearchBox({super.key, required this.onChanged});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,6 +14,7 @@ class SearchBox extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           color: appcolor.teritiaryColor),
       child: TextFormField(
+        onChanged: onChanged, 
         decoration: InputDecoration(
           isDense: true,
           prefixIcon: Icon(Icons.search, size: 20),

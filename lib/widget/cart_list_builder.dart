@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:e_comm_app/models/cart_model.dart';
 import 'package:e_comm_app/provider/cart_provider.dart';
 import 'package:e_comm_app/utils/app_colors.dart';
@@ -57,6 +59,8 @@ class CartList extends StatelessWidget {
             SizedBox(
               width: 10,
             ),
+
+            // Quantity Section
             Container(
               child: Column(
                 children: [
