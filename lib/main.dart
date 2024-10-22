@@ -1,10 +1,17 @@
+import 'package:e_comm_app/provider/cart_provider.dart';
 import 'package:e_comm_app/screens/cart_screen.dart';
 import 'package:e_comm_app/screens/detail_screen.dart';
 import 'package:e_comm_app/screens/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => CartProvider(),
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -17,7 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: CartScreen()
+      home: HomeScreen()
     );
   }
 }
