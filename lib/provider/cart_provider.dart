@@ -14,8 +14,10 @@ class CartProvider with ChangeNotifier {
     if (existingProductIndex >= 0) {
       _cartItems[existingProductIndex].quantity =
           (int.parse(_cartItems[existingProductIndex].quantity) + 1).toString();
-      ReusableSnackBar().showSnackbar(context,
-          "Increased quantity by $existingProductIndex", appcolor.successColor);
+      ReusableSnackBar().showSnackbar(
+          context,
+          "Increased quantity by ${existingProductIndex + 1}",
+          appcolor.successColor);
     } else {
       _cartItems.add(
           Cart(name: name, price: price, imagePath: imagePath, quantity: '1'));
@@ -29,7 +31,24 @@ class CartProvider with ChangeNotifier {
 
   List<Cart> get cartItems => _cartItems;
 
-  void emptyCart(){
+  void increaseQuantity(int index) {
+    _cartItems[index].quantity =
+        (int.parse(_cartItems[index].quantity) + 1).toString();
+    notifyListeners();
+  }
+
+  void decreaseQuantity(int index) {
+    if (_cartItems[index].quantity == "1") {
+      _cartItems.removeAt(index);
+      notifyListeners();
+    } else {
+      _cartItems[index].quantity =
+          (int.parse(_cartItems[index].quantity) - 1).toString();
+      notifyListeners();
+    }
+  }
+
+  void emptyCart() {
     _cartItems.clear();
     notifyListeners();
   }

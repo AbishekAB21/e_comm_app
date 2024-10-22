@@ -1,11 +1,14 @@
 import 'package:e_comm_app/models/cart_model.dart';
+import 'package:e_comm_app/provider/cart_provider.dart';
 import 'package:e_comm_app/utils/app_colors.dart';
 import 'package:e_comm_app/utils/fontstyles.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class CartList extends StatelessWidget {
   Cart cartitems;
-  CartList({super.key, required this.cartitems});
+  int index;
+  CartList({super.key, required this.cartitems, required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +61,9 @@ class CartList extends StatelessWidget {
               child: Column(
                 children: [
                   IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Provider.of<CartProvider>(context, listen: false).increaseQuantity(index);
+                      },
                       icon: Icon(
                         Icons.add_rounded,
                         color: appcolor.buttonColor,
@@ -69,7 +74,9 @@ class CartList extends StatelessWidget {
                     style: Fontstyles.SmallStyle(context),
                   ),
                   IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                         Provider.of<CartProvider>(context, listen: false).decreaseQuantity(index);
+                      },
                       icon: Icon(
                         Icons.remove,
                         color: appcolor.buttonColor,

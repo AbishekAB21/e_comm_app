@@ -31,7 +31,7 @@ class CartScreen extends StatelessWidget {
                   itemCount: cartItems.length,
                   itemBuilder: (context, index) {
                     final cartItem = cartItems[index];
-                    return CartList(cartitems: cartItem);
+                    return CartList(cartitems: cartItem, index: index,);
                   },
                   separatorBuilder: (context, index) {
                     return const SizedBox(height: 10);
@@ -46,7 +46,7 @@ class CartScreen extends StatelessWidget {
               color: appcolor.backgroundColor,
               child: CartButton(
                 ontap: () {
-                  // Call emptyCart without listen: true
+                 
                   Provider.of<CartProvider>(context, listen: false).emptyCart();
                 },
               ),
