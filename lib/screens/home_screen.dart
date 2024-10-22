@@ -1,4 +1,3 @@
-import 'package:e_comm_app/models/models.dart';
 import 'package:e_comm_app/provider/home_screen_provider.dart';
 import 'package:e_comm_app/utils/app_colors.dart';
 import 'package:e_comm_app/widget/product_list_builder.dart';
