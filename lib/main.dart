@@ -2,6 +2,7 @@ import 'package:e_comm_app/models/models.dart';
 import 'package:e_comm_app/provider/bottom_nav_provider.dart';
 import 'package:e_comm_app/provider/cart_provider.dart';
 import 'package:e_comm_app/provider/home_screen_provider.dart';
+import 'package:e_comm_app/screens/splash_screen.dart';
 import 'package:e_comm_app/widget/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: BottomNavBar()
+      home: SplashScreen()
     );
   }
 }
