@@ -8,6 +8,7 @@ abstract class AppColor{
   final Color primaryColor;
   final Color secondaryColor;
   final Color teritiaryColor;
+  final Color unselectedColor;
   final Color backgroundColor;
   final Color buttonColor;
   final Color successColor;
@@ -17,6 +18,7 @@ abstract class AppColor{
     required this.primaryColor,
     required this.secondaryColor,
     required this.teritiaryColor,
+    required this.unselectedColor,
     required this.backgroundColor,
     required this.buttonColor,
     required this.successColor,
@@ -31,6 +33,7 @@ class AppDefaultColor extends AppColor{
     primaryColor: Colors.white ,
     secondaryColor: Colors.grey,
     teritiaryColor: Colors.grey.shade300,
+    unselectedColor: Colors.grey.shade500,
     backgroundColor: Colors.grey.shade200,
     buttonColor: Colors.black,
     successColor: Colors.green,

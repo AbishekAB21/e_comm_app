@@ -1,14 +1,20 @@
+import 'package:e_comm_app/provider/bottom_nav_provider.dart';
 import 'package:e_comm_app/provider/cart_provider.dart';
 import 'package:e_comm_app/screens/cart_screen.dart';
 import 'package:e_comm_app/screens/detail_screen.dart';
 import 'package:e_comm_app/screens/home_screen.dart';
+import 'package:e_comm_app/widget/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => CartProvider(),
+    MultiProvider(
+      
+    providers: [
+      ChangeNotifierProvider(create: (context) => CartProvider(),),
+      ChangeNotifierProvider(create: (context) => BottomNavProvider(),)
+    ],
       child: MyApp(),
     ),
   );
@@ -24,7 +30,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: HomeScreen()
+      home: BottomNavBar()
     );
   }
 }
