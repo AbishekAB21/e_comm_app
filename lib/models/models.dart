@@ -42,7 +42,7 @@ final List<Products> productList = [
     name: 'Nothing Phone 2',
     desc: 'The Nothing Phone 2 brings a refreshing design with its transparent back and 6.7-inch OLED display, offering a unique visual experience. It’s powered by the Snapdragon 8+ Gen 1 chipset for solid performance. The dual-camera system delivers sharp and vibrant images, while its 4700mAh battery with fast charging keeps you powered throughout the day.',
     price: '₹37,000',
-    imageUrl: 'assets/5.jpg',
+    imageUrl: 'assets/6.jpg',
   ),
   Products(
     name: 'Xiaomi 14 Ultra',
